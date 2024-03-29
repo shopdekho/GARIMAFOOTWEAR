@@ -827,14 +827,13 @@ xhttp.onreadystatechange = function() {
                 showdata += '<img src ="' + user[i].first_pic + '" width="90" height="125" />';
                 showdata += '</div>';
                 showdata += '<div class="featured-ad-right">';
-                showdata += '<h4>' + user[i].Brand_name + '</h4>';
+                showdata += '<h4><i class="fa fa-align-left" aria-hidden="true"></i>&nbsp;' + user[i].NAME + '</h4>';
 
                 // Check if user[i].Brand_name is defined before appending it
                 if (user[i].Brand_name !== undefined) {
-                    showdata += '<h6>Name: ' + user[i].Brand_name + '</h6>';
+                    showdata += '<h6>Brand Name:&nbsp;&nbsp;<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp; ' + user[i].Brand_name + '</h6>';
                 }
-
-                showdata += '</div>';
+               showdata += '</div>';
                 showdata += '<div class="clearfix"></div>';
                 showdata += '</a>';
                 showdata += '</div>';
@@ -938,7 +937,7 @@ showdata += '<img src="' + user[i].second_pic + '" alt="..." onclick="window.ope
 showdata += " <a     href='view#" + user[i].User_ID+ "' target=\"_blank\"> "; 
 		
 	showdata += '<section class="list-left">';
-showdata += '<h5 class="title">' + user[i].NAME + " </h5> ";
+showdata += '<h5 class="title"><i class="fa fa-align-left" aria-hidden="true"></i>&nbsp;&nbsp;' + user[i].NAME + " </h5> ";
 	
   
 	
@@ -948,7 +947,7 @@ showdata += '<h5 class="title">' + user[i].NAME + " </h5> ";
   // Check if user[i].name is undefined before appending it
             if (user[i].Size !== undefined) {
                 //showdata += '<h6>Name: ' + user[i].Brand_name + '</h6>';
-                  showdata += '<span class="adprice">  <h6> Price : </h6>' + user[i].Size + " </span> ";
+                  showdata += '<span class="adprice">  <h6> Price : </h6>&nbsp;&nbsp;<i class="fa fa-inr" aria-hidden="true"></i>&nbsp;&nbsp;' + user[i].Price + " </span> ";
             }
   
   
@@ -957,9 +956,9 @@ showdata += '<h5 class="title">' + user[i].NAME + " </h5> ";
   
 	  // showdata += '<span class="adprice">  <h6> Mobile No. : </h6>' + user[i].contact + " </span> ";
       // showdata +=    '<h6> State : </h6>'  + user[i].state + "<br>";
-        showdata += '<h6> Category :</h6>' + user[i].Colour  + "<br>";
+        showdata += '<h6> Brand Name :</h6>&nbsp;&nbsp;<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;' + user[i].Brand_name  + "<br>";
 	  
-	showdata += '<p class="catpath">  Date »  ' + user[i].DATE +  "</p>";     
+	showdata += '<p class="catpath"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;  Date »  &nbsp;  ' + user[i].DATE +  "</p>";     
 	showdata += '</section>';
 
 showdata += '</a>';
@@ -968,11 +967,11 @@ showdata += '</a>';
   
     showdata += '<section class="list-right">';
         
-   showdata += '<h6> Mobile No. :</h6>' + user[i].Quantity + "  ";
+   showdata += '<h6><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; Mobile No. : +91 811 511 1457</h6>' + user[i].Quantity +  " ";
   // showdata += '<h6> Discription :</h6>' + user[i].detail + " ";  
   showdata += '</section>';	
 
-  showdata += " <a href='whatsapp://send?text=https://garimafootwear .shopdekho.online%20-   Best%20Furniture%20For%20Home%2C%20Office%2C%20School%2C%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%AC%E0%A4%A8%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B9%E0%A4%AE%E0%A4%B8%E0%A5%87%20%E0%A4%B8%E0%A4%82%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A4%BE%20%E0%A4%97%E0%A4%AF%E0%A4%BE%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20 https%3A%2F%2Fgarimafootwear .shopdekho.online%2Fp%2Fview.html%23"  + user[i].User_ID+"' > "; 
+  showdata += " <a href='whatsapp://send?text=Best%20footwear%20for%20%20Home%20office%20School.%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%97%E0%A4%B0%E0%A4%BE%E0%A4%9C%20%20%E0%A4%9D%E0%A5%82%E0%A4%82%E0%A4%B8%E0%A5%80%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%B9%E0%A5%88%20%2C%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%95%E0%A5%80%20%E0%A4%AB%E0%A5%81%E0%A4%9F%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F%20%E0%A4%AA%E0%A5%87%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%20%E0%A4%95%E0%A5%87%20%E0%A4%A6%E0%A5%87%E0%A4%96%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%20%E0%A4%94%E0%A4%B0%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%87%20%E0%A4%86%E0%A4%95%E0%A4%B0%20%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%7C%20%20https%3A%2F%2Fgarimafootwear.shopdekho.online%2Fview%23"  + user[i].User_ID+"' > "; 
     showdata += '<span><i class="fa fa-whatsapp" style="font-size:20px;color:white;"></i>  </span> ';
   showdata += '</a>';
   
@@ -985,7 +984,7 @@ showdata += '</a>';
   showdata += '</a>';  */
   
   
- showdata += '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://garimafootwear .shopdekho.online/p/view.html#' + user[i].User_ID) + '" target="_blank">';
+ showdata += '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://garimafootwear.shopdekho.online/view#' + user[i].User_ID) + '" target="_blank">';
 showdata += '<span><i class="fa fa-facebook" style="font-size:20px;color:white;"></i></span>';
 showdata += '</a>';
   
@@ -997,7 +996,7 @@ showdata += '</a>';
   showdata += '</a>'; */
   
  
-showdata += "<a href='https://twitter.com/intent/tweet/?text=Best%20Furniture%20For%20Home%2C%20Office%2C%20School%2C%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%AC%E0%A4%A8%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B9%E0%A4%AE%E0%A4%B8%E0%A5%87%20%E0%A4%B8%E0%A4%82%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A4%BE%20%E0%A4%97%E0%A4%AF%E0%A4%BE%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!&amp;url=garimafootwear .shopdekho.online/p/all-image.html'> ";
+showdata += "<a href='https://twitter.com/intent/tweet/?text=Best%20footwear%20for%20%20Home%20office%20School.%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%97%E0%A4%B0%E0%A4%BE%E0%A4%9C%20%20%E0%A4%9D%E0%A5%82%E0%A4%82%E0%A4%B8%E0%A5%80%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%B9%E0%A5%88%20%2C%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%95%E0%A5%80%20%E0%A4%AB%E0%A5%81%E0%A4%9F%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F%20%E0%A4%AA%E0%A5%87%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%20%E0%A4%95%E0%A5%87%20%E0%A4%A6%E0%A5%87%E0%A4%96%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%20%E0%A4%94%E0%A4%B0%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%87%20%E0%A4%86%E0%A4%95%E0%A4%B0%20%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%7C%20&amp;url=https%3A%2F%2Fgarimafootwear.shopdekho.online/product'> ";
 
   showdata += '<span><i class="fa fa-twitter" style="font-size:20px;color:white;"></i>  </span> ';
   showdata += '</a>';
@@ -1009,7 +1008,7 @@ showdata += "<a href='https://twitter.com/intent/tweet/?text=Best%20Furniture%20
   showdata += '<span><i class="fa fa-telegram" style="font-size:17px;color:white;"></i>  </span> '; 
   showdata += '</a>'; */
  
-    showdata += " <a href='https://telegram.me/share/url?text=Best%20Furniture%20For%20Home%2C%20Office%2C%20School%2C%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%AC%E0%A4%A8%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B9%E0%A4%AE%E0%A4%B8%E0%A5%87%20%E0%A4%B8%E0%A4%82%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A4%BE%20%E0%A4%97%E0%A4%AF%E0%A4%BE%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20&amp;url=https%3A%2F%2Fgarimafootwear .shopdekho.online%2Fp%2Fview.html%23"  + user[i].User_ID+"' > ";   
+    showdata += " <a href='https://telegram.me/share/url?text=Best%20footwear%20for%20%20Home%20office%20School.%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%97%E0%A4%B0%E0%A4%BE%E0%A4%9C%20%20%E0%A4%9D%E0%A5%82%E0%A4%82%E0%A4%B8%E0%A5%80%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%B9%E0%A5%88%20%2C%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%95%E0%A5%80%20%E0%A4%AB%E0%A5%81%E0%A4%9F%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F%20%E0%A4%AA%E0%A5%87%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%20%E0%A4%95%E0%A5%87%20%E0%A4%A6%E0%A5%87%E0%A4%96%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%20%E0%A4%94%E0%A4%B0%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%87%20%E0%A4%86%E0%A4%95%E0%A4%B0%20%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%7C%20&amp;url=https%3A%2F%2Fgarimafootwear.shopdekho.online%2Fview%23"  + user[i].User_ID+"' > ";   
   showdata += '<span><i class="fa fa-telegram" style="font-size:17px;color:white;"></i>  </span> '; 
   showdata += '</a>'; 
 
@@ -1045,8 +1044,7 @@ showdata += '</ul>';
  xhttp.open("GET","https://script.google.com/macros/s/AKfycbwSRB2xbTZ7X2jcqgEv7Y9Gwe5W2RZI2eDV4nbhtAR_rFOo7HD1CEOf3VTzNOYNG9mdNA/exec",false)
   xhttp.send(); 
 	
-	</script> 
-                          
+	</script>       
                           
                           
                          
