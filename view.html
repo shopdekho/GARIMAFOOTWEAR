@@ -12,8 +12,16 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
 
-	<link rel="icon" href="https://shopname.shopdekho.online/Image/Shop_dekho%20_shoes_footwear.png" type="image/x-icon">
-<link rel="shortcut icon" href="https://shopname.shopdekho.online/Image/Shop_dekho%20_shoes_footwear.png" type="image/x-icon">
+<!--	<link rel="icon" href="https://shopname.shopdekho.online/Image/Shop_dekho%20_shoes_footwear.png" type="image/x-icon">-->
+  <link rel="icon" id="favicon" type="image/x-icon" href="https://shopname.shopdekho.online/Image/Shop_dekho%20_shoes_footwear.png">
+  
+   <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Best Footwear for Home, Office, and School - ID: +userData.User_ID+">
+    <meta property="og:description" content="+userData.Description+">
+    <meta property="og:image" content="+userData.first_pic+">
+    <meta property="og:url" content="https://yourwebsite.com/page?userID=+userData.User_ID+">
+
+<!--<link rel="shortcut icon" href="https://shopname.shopdekho.online/Image/Shop_dekho%20_shoes_footwear.png" type="image/x-icon">-->
 
 
 
@@ -296,7 +304,7 @@ body {
   
   .column {
     float: left;
-    width: 27.66%;}
+    width: 25%;}
 }
 
 
@@ -581,11 +589,17 @@ h2.contactmob {
     text-align: left;
 }
   
+  
+  h1.title {
+    font-size: 2rem;
+    color: #117679;
+    padding-bottom: 56px;
+}
   </style>
 </head>
 <body>
 	
-  <nav class="navbar navbar-expand-lg navbar-light bg-lightp"> <a class="navbar-brand" href="/">Garima<span>footwear</span></a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-lightp"> <a class="navbar-brand" href="https://garimafootwear.shopdekho.online">Garima<span>footwear</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -624,12 +638,14 @@ h2.contactmob {
         function getUserIdFromUrl() {
             var url = window.location.href;
             var hashIndex = url.indexOf('#');
+         // document.getElementById('favicon').setAttribute('href', userData.first_pic);
             if (hashIndex !== -1 && hashIndex < url.length - 1) {
                 return url.substring(hashIndex + 1);
+             // document.getElementById('favicon').setAttribute('href', userData.first_pic);
             }
             return '';
         }
-
+//document.getElementById('favicon').setAttribute('href', userData.first_pic);
         // Get User_ID from URL
         var requestedUserId = getUserIdFromUrl();
 
@@ -649,8 +665,9 @@ h2.contactmob {
 
                 // Display the data for the requested User_ID
                 if (userData) {
+                  document.getElementById('favicon').setAttribute('href', userData.first_pic);
                     var userDataContainer = document.getElementById("userDataContainer");
-
+console.log(userData.first_pic)
                     var showdata = '<div class="userpost">';
                    /* showdata += '<h2>' + userData.NAME + '</h2>';
                     showdata += '<p><strong>Brand Name:</strong> ' + userData.Brand_name + '</p>';
@@ -673,17 +690,22 @@ h2.contactmob {
 				showdata += '<a href="#' + userData.FILE1H + '" class="carousel-control-prev"  role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a  href="#' + userData.FILE2I + '" class="carousel-control-next"  role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>'; 
 				showdata += '</div>';*/
 				
-				
+			showdata += '<div class="row"><h1 class="title"> <i class="fa fa-align-left" style="font-size:25px;color:#fb8e83"></i>&nbsp;&nbsp;' + userData.NAME + '</h1></div>';	
 					
  showdata += '<div class="container">';
- showdata += '<div class="mySlides"><div class="numbertext">1 / 2</div><img   class="demop"  src="' + userData.FILE1H + '"  ></div>';
-   showdata += '<div class="mySlides"><div class="numbertext">2 / 2</div><img class="demop" src="' + userData.FILE2I + '"  ></div>';
+ showdata += '<div class="mySlides"><div class="numbertext">1 / 4</div><img   class="demop"  src="' + userData.first_pic + '"  ></div>';
+   showdata += '<div class="mySlides"><div class="numbertext">2 / 4</div><img class="demop" src="' + userData.second_pic + '"  ></div>';
+   showdata += '<div class="mySlides"><div class="numbertext">3 / 4</div><img   class="demop"  src="' + userData.third_pic + '"  ></div>';
+   showdata += '<div class="mySlides"><div class="numbertext">4 / 4</div><img class="demop" src="' + userData.fourth_pic + '"  ></div>';
    showdata += '<a class="prev" onclick="plusSlides(-1)">❮</a>';
    showdata += '<a class="next" onclick="plusSlides(1)">❯</a>';
    showdata += '<div class="caption-container"><p id="caption"></p></div>';
    showdata += '<div class="row">';
-     showdata += '<div class="column"><img  class="demo cursor"   src="' + userData.FILE1H + '" onclick="currentSlide(1)" alt="1st Image"></div>';
-     showdata += '<div class="column"><img  class="demo cursor"   src="' + userData.FILE2I + '"  onclick="currentSlide(2)" alt="2nd Image"></div>';
+     showdata += '<div class="column"><img  class="demo cursor"   src="' + userData.first_pic + '" onclick="currentSlide(1)" alt="1st Image"></div>';
+     showdata += '<div class="column"><img  class="demo cursor"   src="' + userData.second_pic + '"  onclick="currentSlide(2)" alt="2nd Image"></div>';
+     showdata += '<div class="column"><img  class="demo cursor"   src="' + userData.third_pic + '" onclick="currentSlide(3)" alt="3rd Image"></div>';
+     showdata += '<div class="column"><img  class="demo cursor"   src="' + userData.fourth_pic + '"  onclick="currentSlide(4)" alt="4th Image"></div>';
+  
   showdata += '</div>';
 showdata += '</div>';
 
@@ -705,47 +727,79 @@ showdata += '</div>';
 	     showdata += '<div id="box5">';
 		            showdata += '<h2 class="text-success"><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp; Social Share</h2>';
 					
-					
-  showdata += " <a href='whatsapp://send?text=https://garimafootwear.shopdekho.online%20-Best%20Furniture%20For%20Home%2C%20Office%2C%20School%2C%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%AC%E0%A4%A8%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B9%E0%A4%AE%E0%A4%B8%E0%A5%87%20%E0%A4%B8%E0%A4%82%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A4%BE%20%E0%A4%97%E0%A4%AF%E0%A4%BE%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20 https%3A%2F%2Fgarimafootwear.shopdekho.online%2Fp%2Fview.html%23"  + userData.User_ID+"' > "; 
+		
+			
+    showdata += " <a href='whatsapp://send?text=Best%20footwear%20for%20%20Home%20office%20School.%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%97%E0%A4%B0%E0%A4%BE%E0%A4%9C%20%20%E0%A4%9D%E0%A5%82%E0%A4%82%E0%A4%B8%E0%A5%80%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%B9%E0%A5%88%20%2C%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%95%E0%A5%80%20%E0%A4%AB%E0%A5%81%E0%A4%9F%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F%20%E0%A4%AA%E0%A5%87%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%20%E0%A4%95%E0%A5%87%20%E0%A4%A6%E0%A5%87%E0%A4%96%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%20%E0%A4%94%E0%A4%B0%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%87%20%E0%A4%86%E0%A4%95%E0%A4%B0%20%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%7C%20%20https%3A%2F%2Fgarimafootwear.shopdekho.online%2Fview%23"  + userData.User_ID+" " +userData.NAME+"  '> "; 
+                 // document.getElementById('favicon').setAttribute('href', userData.first_pic); 
     showdata += '<span><i class="fa fa-whatsapp" style="font-size:20px;color:white;"></i>  </span> ';
   showdata += '</a>';
   
   
-  showdata += '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://garimafootwear.shopdekho.online/p/view.html#' + userData.User_ID) + '" target="_blank">';
+  showdata += '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('Best%20footwear%20for%20%20Home%20office%20School.%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%97%E0%A4%B0%E0%A4%BE%E0%A4%9C%20%20%E0%A4%9D%E0%A5%82%E0%A4%82%E0%A4%B8%E0%A5%80%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%B9%E0%A5%88%20%2C%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%95%E0%A5%80%20%E0%A4%AB%E0%A5%81%E0%A4%9F%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F%20%E0%A4%AA%E0%A5%87%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%20%E0%A4%95%E0%A5%87%20%E0%A4%A6%E0%A5%87%E0%A4%96%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%20%E0%A4%94%E0%A4%B0%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%87%20%E0%A4%86%E0%A4%95%E0%A4%B0%20%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%7C%20&amp;url=https%3A%2F%2Fgarimafootwear.shopdekho.online%2Fview%23' + userData.User_ID) + '" target="_blank">';
 showdata += '<span><i class="fa fa-facebook" style="font-size:20px;color:white;"></i></span>';
 showdata += '</a>';
 
 
-showdata += "<a href='https://twitter.com/intent/tweet/?text=Best%20Furniture%20For%20Home%2C%20Office%2C%20School%2C%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%AC%E0%A4%A8%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B9%E0%A4%AE%E0%A4%B8%E0%A5%87%20%E0%A4%B8%E0%A4%82%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A4%BE%20%E0%A4%97%E0%A4%AF%E0%A4%BE%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!&amp;url=garimafootwear.shopdekho.online/p/all-image.html'> ";
-
-  showdata += '<span><i class="fa fa-twitter" style="font-size:20px;color:white;"></i>  </span> ';
+showdata += "<a href='https://twitter.com/intent/tweet/?text=Best%20footwear%20for%20%20Home%20office%20School.%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%97%E0%A4%B0%E0%A4%BE%E0%A4%9C%20%20%E0%A4%9D%E0%A5%82%E0%A4%82%E0%A4%B8%E0%A5%80%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%B9%E0%A5%88%20%2C%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%95%E0%A5%80%20%E0%A4%AB%E0%A5%81%E0%A4%9F%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F%20%E0%A4%AA%E0%A5%87%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%20%E0%A4%95%E0%A5%87%20%E0%A4%A6%E0%A5%87%E0%A4%96%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%20%E0%A4%94%E0%A4%B0%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%87%20%E0%A4%86%E0%A4%95%E0%A4%B0%20%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%7C%20&amp;url=https%3A%2F%2Fgarimafootwear.shopdekho.online%2Fview%23"  +userData.User_ID+" " +userData.NAME+"'> ";
+showdata += '<span><i class="fa fa-twitter" style="font-size:20px;color:white;"></i>  </span> ';
   showdata += '</a>';
   
-   showdata += " <a href='https://telegram.me/share/url?text=Best%20Furniture%20For%20Home%2C%20Office%2C%20School%2C%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%AC%E0%A4%A8%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B9%E0%A4%AE%E0%A4%B8%E0%A5%87%20%E0%A4%B8%E0%A4%82%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A4%BE%20%E0%A4%97%E0%A4%AF%E0%A4%BE%20%E0%A4%AB%E0%A4%B0%E0%A5%8D%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82!%20&amp;url=https%3A%2F%2Fgarimafootwear.shopdekho.online%2Fp%2Fview.html%23"  + userData.User_ID+"' > ";   
-  showdata += '<span><i class="fa fa-telegram" style="font-size:17px;color:white;"></i>  </span> '; 
-  showdata += '</a>'; 
+     //showdata += " <a href='https://telegram.me/share/url?text=Best%20footwear%20for%20%20Home%20office%20School.%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%97%E0%A4%B0%E0%A4%BE%E0%A4%9C%20%20%E0%A4%9D%E0%A5%82%E0%A4%82%E0%A4%B8%E0%A5%80%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%B9%E0%A5%88%20%2C%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%95%E0%A5%80%20%E0%A4%AB%E0%A5%81%E0%A4%9F%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F%20%E0%A4%AA%E0%A5%87%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%20%E0%A4%95%E0%A5%87%20%E0%A4%A6%E0%A5%87%E0%A4%96%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%20%E0%A4%94%E0%A4%B0%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%87%20%E0%A4%86%E0%A4%95%E0%A4%B0%20%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%7C%20&amp;url=https%3A%2F%2Fgarimafootwear.shopdekho.online%2Fview%23"  + userData.User_ID+"' > ";   
+  //showdata += '<span><i class="fa fa-telegram" style="font-size:17px;color:white;"></i>  </span> '; 
+  //showdata += '</a>'; 
+                  
+
+
+//var item = response.user[0]; // Assuming you want to use the first item in the 'user' array
+
+//var imageUrl = userData.first_pic; // Change this to the appropriate key containing the image URL
+
+// Construct the HTML code dynamically using the image URL
+//var showdata = "";
+showdata += " <a href='https://telegram.me/share/url?text=Best%20footwear%20for%20%20Home%20office%20School.%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%97%E0%A4%B0%E0%A4%BE%E0%A4%9C%20%20%E0%A4%9D%E0%A5%82%E0%A4%82%E0%A4%B8%E0%A5%80%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%B9%E0%A5%88%20%2C%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%95%E0%A5%80%20%E0%A4%AB%E0%A5%81%E0%A4%9F%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A4%B0%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F%20%E0%A4%AA%E0%A5%87%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%20%E0%A4%95%E0%A5%87%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%20%E0%A4%94%E0%A4%B0%20%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%B6%E0%A5%89%E0%A4%AA%20%E0%A4%AA%E0%A5%87%20%E0%A4%86%E0%A4%95%E0%A4%B0%20%E0%A4%B2%E0%A5%87%20%E0%A4%B8%E0%A4%95%E0%A4%A4%E0%A5%87%20%E0%A4%B9%E0%A5%88%E0%A4%82%20%7C%20&amp;url=https%3A%2F%2Fgarimafootwear.shopdekho.online%2Fview%23"  +userData.User_ID+" " +userData.first_pic+"'> ";   
+//showdata += '<img src="' + userData.first_pic + '" alt="Image" style="width: 100px; height: 100px;">'; // Modify the width, height as per your requirement
+showdata += '<span><i class="fa fa-telegram" style="font-size:17px;color:white;"></i>  </span> '; 
+showdata += '</a>';
   
+                  
+                  
+                  
+                  
+                  
+                
+                  
+                  
+                  
+                  
+                  
 		 showdata += '</div>';// box1 End
 		 
-		 
+		 		
 		 
 		 
 		 
 		 
 		  showdata += '<div id="box2">';
-			 showdata += ' <div class="row"><h2 class="text-success">Price :  &nbsp; &nbsp;<i class="fa fa-inr" aria-hidden="true"></i> ' + userData.Size + '</h2></div>';
-			 showdata += ' <div class="row"><h3 class="text-warning"><i class="fa fa-user-circle" aria-hidden="true"></i></h3>&nbsp; &nbsp;<h5>Make By :   ' + userData.Brand_name + '</h5></div>';
+			 showdata += ' <div class="row"><h2 class="text-success">Price :  &nbsp; &nbsp;<i class="fa fa-inr" aria-hidden="true"></i> ' + userData.Price + '</h2></div>';
+			 showdata += ' <div class="row"><h3 class="text-warning"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 712 612" width="1em" height="1em"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 0C352.3 0 256 32 256 32V160c48 0 76 16 104 32s56 32 104 32c56.4 0 176-16 176-96S512 0 416 0zM128 96c0 35.3 28.7 64 64 64h32V32H192c-35.3 0-64 28.7-64 64zM288 512c96 0 224-48 224-128s-119.6-96-176-96c-48 0-76 16-104 32s-56 32-104 32V480s96.3 32 160 32zM0 416c0 35.3 28.7 64 64 64H96V352H64c-35.3 0-64 28.7-64 64z"/></svg></h3>&nbsp; &nbsp;<h5>Brand Name :   ' + userData.Brand_name + '</h5></div>';
 			 showdata += ' <div class="row"><p><i class="text-success fa fa-check-square-o" aria-hidden="true"></i> <strong>100%</strong> Good Quality</p></div>';
-			 showdata += ' <div class="row mt-4"><h3 class="text-info"><i class="fa fa-calendar" aria-hidden="true"></i></h3><p style="font-size: 20px"> &nbsp; Date : | &nbsp; <span class="text-success">' + userData.DATE + '</span> </p></div>';
-			  showdata += '<div class="row mt-4"><h4> <i class="fa fa-list-ul" aria-hidden="true"></i>&nbsp; Category‍: &nbsp; &nbsp;</h4><p style="font-size: 18px">' + userData.Colour + ' </p></div>';
+			 showdata += ' <div class="row mt-4"><h3 class="text-info"><i class="fa fa-calendar" aria-hidden="true"></i></h3><p style="font-size: 20px"> &nbsp; List Date : | &nbsp; <span class="text-success">' + userData.DATE + '</span> </p></div>';
+			  showdata += '<div class="row mt-4"><h4> <i class="fa fa-list-ul" aria-hidden="true"></i>&nbsp; Quantity : &nbsp; &nbsp;</h4><p style="font-size: 18px">' + userData.Quantity + ' </p></div>';
 		showdata += '</div>';// box2 End
+		
+		showdata += '<div id="box5">';
+		            showdata += '<h2 class="text-success"><i class="fa fa-paint-brush" style="font-size:25px;color:red"></i>&nbsp; Colour | &nbsp;' + userData.Colour + '</h2>';
+		        showdata += ' <div class="row mt-4"><h3 class="text-info"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 712 612" width="1em" height="1em"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 0C352.3 0 256 32 256 32V160c48 0 76 16 104 32s56 32 104 32c56.4 0 176-16 176-96S512 0 416 0zM128 96c0 35.3 28.7 64 64 64h32V32H192c-35.3 0-64 28.7-64 64zM288 512c96 0 224-48 224-128s-119.6-96-176-96c-48 0-76 16-104 32s-56 32-104 32V480s96.3 32 160 32zM0 416c0 35.3 28.7 64 64 64H96V352H64c-35.3 0-64 28.7-64 64z"/></svg></h3><p style="font-size: 20px"> &nbsp; Size : | &nbsp; <span class="text-success">' + userData.Size + '</span> </p></div>';
+			 
+		showdata += '</div>';
+		 
 		  showdata += '<div id="box3">';
-						 showdata += '<div class="row"><h2 class="contactmob">Contact to worker!</h2></div>';
-					  showdata += '<div class="row"><h2 class="text-success"> Mobile No :&nbsp;<i class="fa fa-phone" aria-hidden="true"></i> ' + userData.Quantity + '</h2></div>';
+						 showdata += '<div class="row"><h2 class="contactmob">Contact to Owner!</h2></div>';
+					  showdata += '<div class="row"><h2 class="text-success"> Mobile No :&nbsp;<i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp; +91 811 511 1457 <br></h2><h2 class="text-success"> :&nbsp;<i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; +91 873 906 6514</h2></div>';
 					   
 		 showdata += '</div>';// box3 End
 		  showdata += '<div id="box4">';
-					   showdata += '<div class="row mt-4"> <h4>Name: &nbsp; &nbsp; <i class="fa fa-user-circle" aria-hidden="true"></i></h4> &nbsp;<p style="font-size: 18px">' + userData.Brand_name + ' </p></div>';
+					   showdata += '<div class="row mt-4"> <h4>Name: &nbsp; &nbsp; <i class="fa fa-user-circle" aria-hidden="true"></i></h4> &nbsp;<p style="font-size: 18px">Prince Yadav </p></div>';
 		  showdata += '</div>';// box4 End
     showdata += '</div>';// col-lg-4 End
   
@@ -815,7 +869,7 @@ carouselImages.forEach((image, index) => {
         };
 
         // Open the HTTP request
-        xhttp.open("GET", "https://script.google.com/macros/s/AKfycbyOf2iK_efWsgq5_tHPYc9iCRxIH4wJafsaHs1Nd9ruePH6aJUCy5RHFF7wpXKeHc67/exec", true); // Use true for asynchronous
+        xhttp.open("GET", "https://script.google.com/macros/s/AKfycbwSRB2xbTZ7X2jcqgEv7Y9Gwe5W2RZI2eDV4nbhtAR_rFOo7HD1CEOf3VTzNOYNG9mdNA/exec", true); // Use true for asynchronous
 
         // Send the request
         xhttp.send();
@@ -825,9 +879,9 @@ carouselImages.forEach((image, index) => {
 
 
 <div class="container">
-   <div class="row mt-5"><h2 class="similarPdc">Similar Products</h2></div>
+   <div class="row mt-5"><h2 class="similarPdc">Other Products</h2></div>
      <div class="row mt-5">
-<script>
+<!--<script>
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -872,8 +926,66 @@ xhttp.onreadystatechange = function() {
     }
 };
 
-xhttp.open("GET", "https://script.google.com/macros/s/AKfycbyOf2iK_efWsgq5_tHPYc9iCRxIH4wJafsaHs1Nd9ruePH6aJUCy5RHFF7wpXKeHc67/exec", false);
+xhttp.open("GET", "https://script.google.com/macros/s/AKfycbwSRB2xbTZ7X2jcqgEv7Y9Gwe5W2RZI2eDV4nbhtAR_rFOo7HD1CEOf3VTzNOYNG9mdNA/exec", false);
 xhttp.send();
+</script>-->
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          var response = JSON.parse(xhttp.responseText);
+          var user = response.user;
+          var showdata = "";
+
+          var filteredUser = user.filter(function(item) {
+              return item.User_ID.trim() !== '';
+          });
+
+          var start = Math.max(filteredUser.length - 10, 0);
+
+          for (var i = filteredUser.length - 7; i >= start; i--) {
+              console.log("Processing item:", filteredUser[i]);
+              // Log values for debugging
+              console.log("DATE:", filteredUser[i].DATE);
+              console.log("NAME:", filteredUser[i].NAME);
+              console.log("Colour:", filteredUser[i].Colour);
+              console.log("Quantity:", filteredUser[i].Quantity);
+              if (filteredUser[i].User_ID.trim() !== '' && filteredUser[i].Brand_name.trim() !== '') {
+                showdata +='<div class="col-md-3">';
+   		 showdata +='<div class="card">';
+   			showdata +='<img class="card-img-top img-fluid" src="' + filteredUser[i].first_pic + '">';
+   			 showdata +='<div class="card-title">';
+   				showdata +='<h4><i class="fa fa-align-left" aria-hidden="true"></i>&nbsp;&nbsp;' + filteredUser[i].NAME + '</h4>';
+   			showdata +='</div>';
+   			 showdata +='<div class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;&nbsp;' + filteredUser[i].DATE + '<br/><br/>';
+              showdata += " <a href='view.html#" + filteredUser[i].User_ID + "' target=\"_blank\" class=\"btn btn-success text-light\"> View More ";
+              showdata += '</a> &nbsp; <br/><br/>';
+             showdata +='</div>';
+   		showdata +='</div>';
+ showdata +='</div>';
+              } else {
+                  // If required fields are missing, hide the block
+                  showdata += '<div class="col-md-3 biseller-column" style="display: none;"></div>';
+              }
+          }
+
+          document.write(showdata);
+      }
+  };
+
+  xhttp.open("GET", "https://script.google.com/macros/s/AKfycbwSRB2xbTZ7X2jcqgEv7Y9Gwe5W2RZI2eDV4nbhtAR_rFOo7HD1CEOf3VTzNOYNG9mdNA/exec", false);
+  xhttp.send();
 </script>
 </div> 
 </div>
@@ -959,7 +1071,7 @@ carouselImages.forEach((image, index) => {
 
 
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-muted">&copy; 2024 &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="/">Garima<span>footwear.shopdekho.online</span></a></p> 
+    <p class="col-md-4 mb-0 text-muted">&copy; 2024 &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="https://garimafootwear.shopdekho.online">Garima<span>footwear.shopdekho.online</span></a></p> 
 
     <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
@@ -983,7 +1095,3 @@ carouselImages.forEach((image, index) => {
  --> 
 </body>
 </html>
-
-
-   
-	
