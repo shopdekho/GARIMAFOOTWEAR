@@ -347,7 +347,7 @@ img.demop {
   
   
   <style>
-  .card {
+.card {
     text-align: center;
     border: none;
     border-radius: 4px;
@@ -355,9 +355,8 @@ img.demop {
     -moz-box-shadow: 12px 14px 22px 2px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 1px 8px 0px rgb(131 131 131 / 75%);
     margin-bottom: 29px;
-    border: 2px solid #e2e2e2;
-	
-	 position: relative;
+    /* border: 2px solid #e2e2e2; */
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -367,7 +366,7 @@ img.demop {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #ffe8c0;
     background-clip: border-box;
 }
   
@@ -494,6 +493,14 @@ h2.contactmob {
     font-weight: bolder;
     color: #efb70d;
 }
+  .card-title {
+    margin-bottom: 1.75rem;
+    padding-top: 18px;
+}
+h4.cardtitle {
+     font-size: 1.2rem;
+    color: #28a745;
+}
   </style>
   
   
@@ -591,9 +598,14 @@ h2.contactmob {
   
   
   h1.title {
-    font-size: 2rem;
+      font-size: 1.6rem;
     color: #117679;
-    padding-bottom: 56px;
+    padding-bottom: 24px;
+}
+
+	  a.footer-brand {
+    font-size: 1.0rem;
+    color: #3be1cb;
 }
   </style>
 </head>
@@ -907,7 +919,7 @@ xhttp.onreadystatechange = function() {
          showdata +='<div class="col-md-3">';
    		 showdata +='<div class="card">';
    			showdata +='<img class="card-img-top img-fluid" src="' + user[i].FILE1H + '">';
-   			 showdata +='<div class="card-title">';
+   			 showdata +='<div class="">';
    				showdata +='<h4>' + user[i].NAME + '</h4>';
    			showdata +='</div>';
    			 showdata +='<div class="card-text">' + user[i].DATE + '<br/><br/>';
@@ -965,8 +977,8 @@ xhttp.send();
                 showdata +='<div class="col-md-3">';
    		 showdata +='<div class="card">';
    			showdata +='<img class="card-img-top img-fluid" src="' + filteredUser[i].first_pic + '">';
-   			 showdata +='<div class="card-title">';
-   				showdata +='<h4><i class="fa fa-align-left" aria-hidden="true"></i>&nbsp;&nbsp;' + filteredUser[i].NAME + '</h4>';
+   			 showdata +='<div class="">';
+   				showdata +='<h4 class="cardtitle"><i class="fa fa-align-left" aria-hidden="true"></i>&nbsp;&nbsp;' + filteredUser[i].NAME + '</h4>';
    			showdata +='</div>';
    			 showdata +='<div class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;&nbsp;' + filteredUser[i].DATE + '<br/><br/>';
               showdata += " <a href='view.html#" + filteredUser[i].User_ID + "' target=\"_blank\" class=\"btn btn-success text-light\"> View More ";
@@ -1071,7 +1083,7 @@ carouselImages.forEach((image, index) => {
 
 
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <p class="col-md-4 mb-0 text-muted">&copy; 2024 &nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="https://garimafootwear.shopdekho.online">Garima<span>footwear.shopdekho.online</span></a></p> 
+    <p class="col-md-4 mb-0 text-muted">&copy; 2024 &nbsp;&nbsp;&nbsp;<a class="footer-brand" href="https://garimafootwear.shopdekho.online">Garima<span>footwear.shopdekho.online</span></a></p> 
 
     <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
